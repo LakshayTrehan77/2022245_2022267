@@ -10,4 +10,6 @@ If you can not view the fxml file properly run the stickherogame class.
 --- We have added game level as an additional bonus feature.
 
 --- We have created several classes and have established relationship amongst them as provided in the UML diagrams and have used all the concepts of oops for the same.
-
+--- We have added the JUnit class and the test sameple test methods
+--- We have additional feature of Level where the difficulty increases by increase in levels
+--- We will use Multithreading in the Game Operations performed by the StickHeroGame 
