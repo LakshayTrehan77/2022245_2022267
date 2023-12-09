@@ -407,7 +407,7 @@ public class Scene3 extends Thread{
 
                 parallelTransition.setOnFinished(finisher -> {
                     if (stickRectangle.getBoundsInParent().intersects(newTowerImageView.getBoundsInParent())
-                            && stickRectangle.getBoundsInParent().getMaxX() < newTowerImageView.getBoundsInParent().getMaxX() && filpped) {
+                            && stickRectangle.getBoundsInParent().getMaxX() < newTowerImageView.getBoundsInParent().getMaxX()) {
 
                         System.out.println("Stick landed on the tower!");
 
