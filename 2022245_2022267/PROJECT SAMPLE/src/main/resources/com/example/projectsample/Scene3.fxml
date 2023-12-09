@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsample.Scene3">
+    <children>
+        <!-- Background Image -->
+        <ImageView fx:id="bgImage" fitHeight="1000.0" fitWidth="2000.0">
+            <image>
+                <Image url="@pic-3.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Actor Image -->
+        <ImageView id="heroImageView" fx:id="heroImageView" fitHeight="130.0" fitWidth="91.0" translateX="-670.0" translateY="-60.0" y="150.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@hero2.png" />
+            </image>
+        </ImageView>
+
+
+        <!-- Play Now Button -->
+        <ImageView fx:id="standingtower" fitHeight="500.0" fitWidth="245.0" translateX="-670.0" translateY="250.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@alpha.png" />
+            </image>
+        </ImageView>
+
+        <ImageView fx:id="newTowerImageView" fitHeight="500.0" fitWidth="300.0" translateX="0.0" translateY="250.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@alpha.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="gamma" fitHeight="500.0" fitWidth="60.0" translateX="100" translateY="250.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@gamma.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+
+        <!-- Actor Image -->
+        <ImageView fitHeight="100.0" fitWidth="100.0" translateX="400.0" translateY="-300.0" y="150.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@CherryLogo.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="cherryImage" fitHeight="100.0" fitWidth="100.0" translateX="-400.0" translateY="90.0" y="150.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@CherryLogo.png" />
+            </image>
+        </ImageView>
+        <Text fx:id="Scorecard" fill="#fcfcfc" onMouseClicked="#initialize" strokeType="OUTSIDE" strokeWidth="0.0" text="00" translateX="20.0" translateY="-300.0">
+            <font>
+                <Font size="64.0" />
+            </font>
+        </Text>
+
+        <Text fx:id="cherry" fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="00" translateX="325.0" translateY="-300.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+
+        <!-- Actor Image -->
+        <ImageView fitHeight="200.0" fitWidth="200.0" translateX="20.0" translateY="-300.0" y="150.0" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@Score.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" translateX="-400.0" translateY="-300.0">
+         <image>
+            <Image url="@hero0.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="level" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00" translateX="-320.0" translateY="-300.0">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </Text>
+      <Text fill="#f72f2f" fontSmoothingType="LCD" strokeLineCap="ROUND" strokeMiterLimit="100.0" strokeWidth="0.0" text="Score Board" translateX="20.0" StackPane.alignment="TOP_CENTER">
+         <font>
+            <Font name="Calibri Bold Italic" size="56.0" />
+         </font>
+         <stroke>
+            <RadialGradient centerX="0.3149779819706988" centerY="0.5946969696969697" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Text>
+      <Rectangle fx:id="stickRectangle" arcHeight="5.0" arcWidth="5.0" height="300.0" onDragDetected="#initialize" onDragDone="#handleMouseReleased" onDragDropped="#handleMouseReleased" onDragEntered="#initialize" onDragOver="#handleMouseReleased" onKeyPressed="#initialize" onKeyReleased="#handleMouseReleased" onMouseDragEntered="#initialize" onMouseDragExited="#handleMouseReleased" onMousePressed="#initialize" onMouseReleased="#handleMouseReleased" stroke="BLACK" strokeType="INSIDE" translateX="-555.0" width="9.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Rectangle>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+
+
+    </children>
+</StackPane>
