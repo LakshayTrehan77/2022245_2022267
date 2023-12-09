@@ -1,4 +1,6 @@
- # 2022245_2022267
+ # 2022245_2022267 Kashvi Panvanda and Lakshay Trehan
+
+ 
 
 --- We have provided UML diagram containing both the class and user case diagram and 4 scenes containing the intro video, main menu, start game scene and game over scene.
 We have also added background music and screenshots of the scenes as well as their fxml file ( UI scripts ). 
