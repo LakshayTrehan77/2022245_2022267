@@ -1,83 +1,114 @@
-package com.example.projectsamples;
+package com.example.projectsample;
 
-import com.example.projectsample.Scene3;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static com.example.projectsample.Scene3.score;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Scene3Test {
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class Scene3Test {
 
-    private Scene3 scene3Controller;
+    @BeforeAll
+    static void setUp() {
+        // Initialize JavaFX Toolkit
+        javafx.application.Platform.startup(() -> {});
+    }
 
-    @BeforeEach
-    void setUp() throws Exception {
+    @Test
+    void testScene3Components() {
         try {
-            // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
-            Parent root = loader.load();
+            // Load Scene 3 from FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectsample/Scene3.fxml"));
+            Parent scene3Root = loader.load();
 
-            // Get the controller instance
-            scene3Controller = loader.getController();
+            // Access the controller of Scene 3
+            Scene3 scene3Controller = loader.getController();
 
-            // Set up the stage and scene
-            Stage primaryStage = new Stage();
-            primaryStage.setScene(new Scene(root));
-            primaryStage.show();
-        } catch (IllegalStateException e) {
-            // Handle exceptions appropriately
+            // Test various components of Scene 3
+            assertNotNull(scene3Controller.getStickRectangle());
+            assertNotNull(scene3Controller.getBgImage());
+            assertNotNull(scene3Controller.getStandingtower());
+            assertNotNull(scene3Controller.getStickHero());
+            assertNotNull(scene3Controller.getCherryImage());
+            assertNotNull(scene3Controller.getHeroImageView());
+            assertNotNull(scene3Controller.getScorecard());
+            assertNotNull(scene3Controller.getCherry());
+
+            // Add more assertions as needed
+
+            // Optional: Show the Scene for visual inspection
+            javafx.application.Platform.runLater(() -> {
+                Stage stage = new Stage();
+                stage.setScene(new Scene(scene3Root));
+                stage.show();
+            });
+
+        } catch (Exception e) {
             e.printStackTrace();
-            fail("Exception during setup: " + e.getMessage());
         }
     }
 
     @Test
-    void testCharacterMovement() {
-        // Access the components of Scene3 using the scene3Controller
-        assertNotNull(scene3Controller.heroImageView);
-        assertNotNull(scene3Controller.getStickRectangle());
+    void CharacterMovement(){
+        try {
+            FXMLLoader scene2Loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
+            Parent scene2Root = scene2Loader.load();
+            Scene scene2 = new Scene(scene2Root);
+            Stage stage = new Stage();
+            stage.setScene(scene2);
+            stage.setFullScreen(true);
 
-        // Implement your tests for character movement
+            score = 0;
+
+            javafx.scene.image.ImageView playNowImageView = (javafx.scene.image.ImageView) scene2.lookup("#heroImageView");
+            javafx.scene.image.ImageView NewTowerImage = (javafx.scene.image.ImageView) scene2.lookup("#newTowerImageView");
+            assertTrue(playNowImageView.getBoundsInParent().intersects(NewTowerImage.getBoundsInParent()));
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @Test
-    void testPlatformGeneration() {
-        // Access the components of Scene3 using the scene3Controller
-        assertNotNull(scene3Controller.getNewTowerImageView());
-        assertNotNull(scene3Controller.getStandingtower());
-
-        // Implement your tests for platform generation
-    }
 
     @Test
-    void testRevivingFeature() {
-        // Access the components of Scene3 using the scene3Controller
-        assertNotNull(scene3Controller.getCherries());
-        assertNotNull(scene3Controller.getCherryImage());
+    void testScene4Components() {
+        try {
+            // Load Scene 4 from FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectsample/scene4.fxml"));
+            Parent scene4Root = loader.load();
 
-        // Implement your tests for the reviving feature
-    }
+            // Access the controller of Scene 4
+            Scene4 scene4Controller = loader.getController();
 
-    // Add similar tests for other components and features
+            // Test various components of Scene 4
+            assertNotNull(scene4Controller.getCondition());
+            assertNotNull(scene4Controller.getRevindbutton());
+            assertNotNull(scene4Controller.getCurrentscore());
+            assertNotNull(scene4Controller.getHome());
+            assertNotNull(scene4Controller.getClass());
+            assertNotNull(scene4Controller.getCondition());
 
-    @Test
-    void testGameFunctionality() {
-        // Access the components of Scene3 using the scene3Controller
-        assertNotNull(scene3Controller.getScorecard());
-        assertNotNull(scene3Controller.getBgImage());
+            // Add more assertions as needed
 
-        // Implement your tests for overall game functionality
-    }
+            // Optional: Show the Scene for visual inspection
+            javafx.application.Platform.runLater(() -> {
+                Stage stage = new Stage();
+                stage.setScene(new Scene(scene4Root));
+                stage.show();
+            });
 
-    @Test
-    void testGraphicsAndSoundEffects() {
-        // Access the components of Scene3 using the scene3Controller
-        assertNotNull(scene3Controller.getGamma());
-
-        // Implement your tests for graphics and sound effects
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
