@@ -1,6 +1,8 @@
-package com.example.projectsample;
+package com.example.projectsamples;
 
 
+import com.example.projectsample.Scene3;
+import com.example.projectsample.Scene4;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
